@@ -8,7 +8,7 @@ class User(AbstractUser):
 
 class Post(models.Model):
     username = models.ForeignKey('User', on_delete=models.CASCADE)
-    contents = models.TextField()
+    content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     likes = models.IntegerField(default=0)
