@@ -12,3 +12,13 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     likes = models.IntegerField(default=0)
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "username": self.username.username,
+            "content": self.content,
+            "created_at": self.created_at,
+            "updated_at": self.updated_at,
+            "likes": self.likes
+        }
