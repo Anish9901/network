@@ -16,4 +16,14 @@
             </div>
         </div>
     </div>
+    <script>
+        function get_posts() {
+            const all_posts = fetch(`/get_posts`).then(response => response.json());
+            return all_posts;
+        }
+        document.addEventListener('DOMContentLoaded',async function() {
+            const all_posts = await get_posts();
+            console.log(all_posts);
+        })
+    </script>
 {% endblock %}
