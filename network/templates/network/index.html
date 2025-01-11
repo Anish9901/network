@@ -1,5 +1,19 @@
 {% extends "network/layout.html" %}
 
 {% block body %}
-    TODO
+    <div class="mx-3">
+        <h2>All Posts</h2>
+        <div id="new_post" class="card">
+            <div class="card-body">
+                <h4 class="card-title">New Post</h4>
+                <form action="{% url 'new_post' %}" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <textarea name="post_content" class="form-control" type="text"></textarea>
+                        <input class="btn btn-primary mt-1" type="submit" value="Post">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}
